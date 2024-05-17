@@ -34,7 +34,7 @@ public class Problem {
         return str;
     }
 
-    Result Solve(int capacity){
+    public Result Solve(int capacity){
         Arrays.sort(objectCategories, new Comparator<Item>(){
             public int compare(Item o1, Item o2){
                 return Float.compare(o1.ratio, o2.ratio);
@@ -45,7 +45,7 @@ public class Problem {
         int val = 0;
         List<Integer> resultList = new ArrayList<>();
         while(index<objCatNum){
-            if(objectCategories[index].weight+weight<capacity){
+            if(objectCategories[index].weight+weight<=capacity){
                 resultList.add(objectCategories[index].id);
                 weight+=objectCategories[index].weight;
                 val+=objectCategories[index].value;

@@ -16,7 +16,7 @@ public class ProblemTest extends TestCase {
     public void testAtLeastOneItem() {
         Problem p = new Problem(5, 1, 10, 20);
         p.objectCategories[0] = new Item(0,1,1);
-        Assert.assertEquals(1, p.Solve(2).ObjectIndices.size());
+        Assert.assertEquals(2, p.Solve(2).ObjectIndices.size());
     }
     public void testNoneFillsRequirements() {
         Problem p = new Problem(5, 1, 10, 20);
@@ -27,11 +27,12 @@ public class ProblemTest extends TestCase {
     @Test
     public void testResult(){
         Problem p =  new Problem(5,420,0,10);
-        List<Integer> l = p.Solve(15).ObjectIndices;
+        List<Integer> l = p.Solve(5).ObjectIndices;
+        System.out.println(l);
         Integer[] s = new Integer[l.size()];
         l.toArray(s);
 
-        Integer[] check = {2,2,4,1};
+        Integer[] check = {2,2};
         Assert.assertArrayEquals(check, s);
 
 

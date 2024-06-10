@@ -36,10 +36,11 @@ public class Problem {
 
     public Result Solve(int capacity){
         Arrays.sort(objectCategories, new Comparator<Item>(){
-            public int compare(Item o1, Item o2){
+            public int compare(Item o2, Item o1){
                 return Float.compare(o1.ratio, o2.ratio);
             }
         });
+
         int weight = 0;
         int index = 0;
         int val = 0;
